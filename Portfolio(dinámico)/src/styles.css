@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Mouse+Memoirs&family=Prompt:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Combo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+
+
+/*  Fuente General  */
+*{
+    font-family: 'Arvo', serif
+}
+body{
+    height: auto;
+    overflow-x: hidden;
+}
+
+/*  direcciones hacia las secciones scroll  */
+html{
+    scroll-behavior:smooth;
+  }
+  
+  section#experiencia{
+    scroll-margin-top: 150px;
+  }
+  
+  section#habilidades{
+    scroll-margin-top: 150px;
+  }
+  
+  section#educación{
+    scroll-margin-top: 150px;
+  }
+  
+  section#información{
+    scroll-margin-top: 155px;
+  }
+  
+  section#proyectos{
+    scroll-margin-top: 150px;
+  }
+
+
+/*  Sección Apartados  */
+section.information{
+    background-image: url(https://i.ibb.co/pRFVpWK/gray-concrete-wall.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin-top: -2.5rem;
+}
+
+/*  Marco Borde De Cada Apartado  */
+div.border{
+    background-color: #8f74af33;
+}
+
+div#borde{
+    margin-top: 1.5rem;
+    margin-left: 0.7rem;
+    margin-bottom: 2.5rem;
+}
+
+div#texto-para-ajustar{
+    padding-left: 12%;
+    margin-top: 2%;
+}
+
+  /*  Para desbloquear modal con navbar  */
+  .modal-backdrop {
+    --bs-backdrop-zindex: 0;
+}
+
+/*  Acomodo del tamaño de los modales  */
+.modal-content {
+  width: 130% !important;
+  box-shadow: 0 0 20px 0 rgba(151, 57, 195, 0.631);
+}
+
+@media screen and (max-width : 380px){
+
+  body{
+    margin-top: 6rem;
+  }
+  
+}

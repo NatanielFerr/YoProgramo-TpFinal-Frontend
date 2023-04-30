@@ -1,0 +1,157 @@
+{
+    "nombre": "Nataniel",
+    "apellido": "Ferreyra",
+    "sobremi": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem tempora expedita officiis cupiditate, accusamus quasi! Ullam id, inventore eveniet accusantium asperiores, maiores quas magnam quasi odio ut doloremque cumque. Sapiente.",
+    "titulo": "Full Stack Developer Jr",
+    "imgbanner": "./assets/img/pccode.jpg",
+    "img_perfil":"./assets/img/Nataniel.F- (6).png",
+    "bienvenida1":"Hola!",
+    "bienvenida2":"Bienvenido/a a mi portfolio,",
+    "bienvenida3":"me presento. Soy:",
+
+    "redes":[
+        {
+            "id":1,
+            "nombre":"Linkedin",
+            "logo":"linkedin",
+            "link":"https://www.linkedin.com/in/nataniel-alexandro-ferreyra-kus-347385246/",
+            "denominacion":"boton-linkedin"
+        },
+        {
+            "id":2,
+            "nombre":"Instagram",
+            "logo":"fa-brands fa-instagram fa-2xl",
+            "link":"https://www.instagram.com/nataniel.ferr/",
+            "denominacion":"boton-instagram"
+        },
+        {
+            "id":3,
+            "nombre":"Github",
+            "logo":"fa-brands fa-github fa-2xl",
+            "link":"https://github.com/NatanielFerr",
+            "denominacion":"boton-github"
+        },
+        {
+            "id":4,
+            "nombre":"Twitter",
+            "logo":"fa-brands fa-twitter fa-2xl",
+            "link":"https://twitter.com/NatanielFerrey1",
+            "denominacion":"boton-twitter"
+        }
+    ],
+
+    "experiencia":[
+        {
+            "id": 1,
+            "nombre": "Instalacion de pc",
+            "descripcion_cargo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, natus. Ipsum tempore fuga in alias maxime temporibus harum quasi officiis dolor dolores magnam dignissimos assumenda vel, repellendus aliquid, quia praesentium?",
+            "logo":"./assets/img/Nataniel.F- (6).png",
+            "cargo":"protector",
+            "inicio":"",
+            "fin":"",
+            "actual":"trabajo actual",
+            "link":""
+
+        }
+],
+
+
+    "educacion": [
+        {
+            "id" : 1,
+            "inicio": "02/05/22 - ",
+            "fin": "02/07/22",
+            "nivel": "Se Programar",
+            "institucion":"",
+            "img": "./assets/img/Nataniel.F- (6).png",
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, natus. Ipsum tempore fuga in alias maxime temporibus harum quasi officiis dolor dolores magnam dignissimos assumenda vel, repellendus aliquid, quia praesentium?",
+            "link":""
+
+        },
+        {
+            "id" : 2,
+            "inicio": "02/05/22 - ",
+            "fin": "02/07/22",
+            "nivel": "Yo Programo",
+            "img": "./assets/img/Nataniel.F- (6).png",
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, natus. Ipsum tempore fuga in alias maxime temporibus harum quasi officiis dolor dolores magnam dignissimos assumenda vel, repellendus aliquid, quia praesentium?",
+            "link":""
+
+        },
+        {
+            "id" : 3,
+            "inicio": "02/05/22 - ",
+            "fin": "02/07/22",
+            "nivel": "Yo Programo",
+            "img": "./assets/img/Nataniel.F- (6).png",
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, natus. Ipsum tempore fuga in alias maxime temporibus harum quasi officiis dolor dolores magnam dignissimos assumenda vel, repellendus aliquid, quia praesentium?",
+            "link":""
+
+        }
+    ],
+
+    "habilidades": [
+        {
+            "id":1,
+            "nombre":"html",
+            "logo":"./assets/img/html-5-logo-svgrepo-com.svg",
+            "porcentaje":"1",
+            "porcentaje_titulo":"1%"
+        },
+        {
+            "id":2,
+            "nombre":"javascript",
+            "logo":"",
+            "porcentaje":"2",
+            "porcentaje_titulo":"2%"
+        },
+        {
+            "id":3,
+            "nombre":"css",
+            "logo":"",
+            "porcentaje":"3",
+            "porcentaje_titulo":"3%"
+        },
+        {
+            "id":4,
+            "nombre":"angular",
+            "logo":"",
+            "porcentaje":"4",
+            "porcentaje_titulo":"4%"
+        },
+        {
+            "id":5,
+            "nombre":"ingles",
+            "logo":"",
+            "porcentaje":"5",
+            "porcentaje_titulo":"5%"
+        }
+
+    ],
+
+    "proyectos":[
+        {
+            "id": 1,
+            "nombre": "Web Bajo El Sol",
+            "descripcion_cargo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, natus. Ipsum tempore fuga in alias maxime temporibus harum quasi officiis dolor dolores magnam dignissimos assumenda vel, repellendus aliquid, quia praesentium?",
+            "logo":"./assets/img/html-5-logo-svgrepo-com.svg",
+            "tamanio":"155",
+            "cargo":"",
+            "inicio":"",
+            "fin":"",
+            "link":""
+            
+        }
+    ],
+
+    "botondescarga":[
+        {
+            "nombre":"Portfolio-NatanielFerreyra.pdf",
+            "link":"documento.pdf",
+            "anio_derechos":"2022"
+        }
+    ]
+
+
+
+}

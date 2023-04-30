@@ -1,0 +1,24 @@
+/*  modal del logueo exitoso  */
+.logueado{
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+   /* Sección Responsive */
+ @media screen and (max-width: 810px) {
+  *{
+      max-width: 100%;
+  }
+div.modal{
+  flex-wrap: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+div.col-sm-10{
+  margin-left: 0.5rem;
+}
+div.modal-footer{
+  margin-left: 4rem;
+}
+}

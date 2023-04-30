@@ -1,0 +1,14 @@
+.list-group-item{
+    color: #ffffff;
+}
+
+.list-group{
+    --bs-list-group-bg: transparent;
+    --bs-list-group-border-color: transparent;
+}
+
+@media screen and (max-width: 420px) {
+    ul.list-group.list-group-horizontal.button-logout{
+        margin-top: -2rem;
+    }
+}

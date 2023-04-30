@@ -1,0 +1,16 @@
+.list-group-item{
+    color: #ffffff;
+}
+
+.list-group{
+    --bs-list-group-bg: transparent;
+    --bs-list-group-border-color: transparent;
+}
+
+/* Sección Responsive */
+@media screen and (max-width : 800px){
+  ul{
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  }

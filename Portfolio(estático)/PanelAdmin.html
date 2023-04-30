@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    
+    
+      <!--                             CSS only                                               -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/d405aaa310.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+      <!--                              Barra de navegación                                   -->
+      <header>
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/img/LogoArgProgram.png" alt="" width="95%" height="" class="logoargprogram" data-bs-toggle="collapse">
+          </a>
+            <!--Botones menu nav-->
+            <div class="row" id="botones-lista">
+            <ul class="navbar-brand list-group list-group-horizontal">
+              <li class="boton-acercade" type="button">
+                <a class="botones-menu" href="#información">Acerca de</a>
+              </li>
+              <li class="boton-proyectos" type="button">
+              <a class="botones-menu" href="#proyectos">Proyectos</a>
+              </li>
+              <li class="boton-mas" type="button">
+                <a class="botones-menu" href="#" data-bs-toggle="dropdown">Mas</a>
+                <ul class="dropdown-menu boton-mas-menu">
+                <li>
+                  <a class="dropdown-item" href="#experiencia">Experiencia</a></li>
+                <li>
+                  <a class="dropdown-item" href="#educación">Educación</a></li>
+                <li>
+                    <a class="dropdown-item" href="#habilidades">Habilidades</a></li>
+              </ul>
+              </li>
+              <li class="boton-contacto" type="button">
+                <a class="botones-menu" href="Contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          
+      <!--                                Button Redes                                        -->
+          <ul class="list-group list-group-horizontal">
+          <li class="list-group-item"><a id="boton-linkedin" target="_blank" href="https://www.linkedin.com/in/nataniel-alexandro-ferreyra-kus-347385246/"><i class="fa-brands fa-linkedin fa-2xl" data-bs-toggle="collapse"></i></a>
+          </li>
+          <li class="list-group-item"><a id="boton-instagram" target="_blank" href="https://www.instagram.com/nataniel.ferr/"><i class="fa-brands fa-instagram fa-2xl" data-bs-toggle="collapse"></i></a>
+          </li>
+          <li class="list-group-item"><a id="boton-github" target="_blank" href="https://github.com/NatanielFerr"><i class="fa-brands fa-github fa-2xl" data-bs-toggle="collapse"></i></a>
+          </li>
+          <li class="list-group-item"><a id="boton-twitter" target="_blank" href="https://twitter.com/NatanielFerrey1"><i class="fa-brands fa-twitter fa-2xl" data-bs-toggle="collapse"></i></a>
+          </li>
+          <!--                          Button edit                                         -->
+          <li class="list-group-item edicion-redes"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditRedesModal"></i></li>
+            <!--                          Button Delete                                       -->
+          <li class="list-group-item edicion-redes"><i class="fa-solid fa-x fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#DeleteRedesModal"></i></li>
+      <!--                                Button trigger modal                                -->
+          <li class="list-group-item"><i class="fa-solid fa-lock-open fa-2xl" type="button" data-bs-toggle="modal" data-bs-target="#LogoutModal"></i>
+          </li>
+      </ul>
+    </div>
+    </nav>
+
+    <!--                                Modal Logout                                          -->
+    <div class="modal fade" id="LogoutModal" tabindex="-1" aria-labelledby="LogoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="LogoutModalLabel">User Logout</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="logueado">
+            <p>Te has logueado correctamente</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Cerrar Sesión</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--                                Modal Redes Edit                                      -->
+    <div class="modal fade" id="EditRedesModal" tabindex="-1" aria-labelledby="EditRedesModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="EditRedesModalLabel">Redes Sociales</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body form-floating">
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Logo De La Red</label>
+              <div class="col-sm-10">
+                <input type="file" class="form-control" id="inputPassword">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Nombre De La Red</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="floatingInput">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Link De La Red</label>
+              <div class="col-sm-10">
+                <input type="url" class="form-control" id="inputPassword">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--                                Modal Redes Delete                                   -->
+    <div class="modal fade" id="DeleteRedesModal" tabindex="-1" aria-labelledby="DeleteRedesModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="DeleteRedesModalLabel">Redes Sociales</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body form-floating">
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Nombre De La Red</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="floatingInput">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--                                Modal  Banner                                             -->
+    <div class="modal fade" id="BannerModal" tabindex="-1" aria-labelledby="BannerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="BannerModalLabel">Imagen De Banner</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body form-floating">
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Imagen Para El Banner</label>
+              <div class="col-sm-10">
+                <input type="file" class="form-control" id="floatingInput">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--                                Modal Perfil                                            -->
+    <div class="modal fade" id="PerfilModal" tabindex="-1" aria-labelledby="PerfilModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="PerfilModalLabel">Imagen De Perfil</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body form-floating">
+            <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Imagen Para El Perfil</label>
+            <div class="col-sm-10">
+              <input type="file" class="form-control" id="floatingInput">
+            </div>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--                                Modal  Perfil Nombre                                             -->
+    <div class="modal fade" id="PerfilNombreModal" tabindex="-1" aria-labelledby="PerfilNombreModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="PerfilNombreModalLabel">Titulo Perfil</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body form-floating">
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Nombre Y Apellido</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="floatingInput">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Titulo Actual</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="floatingInput">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+<!--                                Modal Acerca De Edit                                              -->
+<div class="modal fade" id="EditAcercaDeModal" tabindex="-1" aria-labelledby="EditAcercaDeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditAcercaDeModalLabel">Acerca De</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Descripción</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--                                Modal Acerca De Delete                                   -->
+<div class="modal fade" id="DeleteAcercaDeModal" tabindex="-1" aria-labelledby="DeleteAcercaDeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="DeleteAcercaDeModalLabel">Acerca De</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Descripción</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--                                Modal Experiencia Edit                                              -->
+<div class="modal fade" id="EditExperienciaModal" tabindex="-1" aria-labelledby="EditExperienciaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditExperienciaModalLabel">Experiencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Logo De La Empresa</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Titulo Del Puesto</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Lugar De Trabajo</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Descripción</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Periodo</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="floatingInput">
+            <br>
+            Desde / Hasta
+            <br>
+            <br>
+            <input type="date" class="form-control" id="floatingInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--                                Modal Experiencia Delete                                   -->
+<div class="modal fade" id="DeleteExperienciaModal" tabindex="-1" aria-labelledby="DeleteExperienciaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="DeleteExperienciaLabel">Experiencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Titulo</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--                                Modal Educación Edit                                              -->
+<div class="modal fade" id="EditEducaciónModal" tabindex="-1" aria-labelledby="EditEducaciónModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditEducaciónModalLabel">Educación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Logo</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Titulo Del Puesto</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Descripción</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Periodo</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="floatingInput">
+            <br>
+            Desde / Hasta
+            <br>
+            <br>
+            <input type="date" class="form-control" id="floatingInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--                                Modal Educación Delete                                   -->
+<div class="modal fade" id="DeleteEducaciónModal" tabindex="-1" aria-labelledby="DeleteEducaciónModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="DeleteEducaciónModalLabel">Experiencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Titulo</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--                                Modal Habilidades Edit                                              -->
+<div class="modal fade" id="EditHabilidadesModal" tabindex="-1" aria-labelledby="EditHabilidadesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditHabilidadesModalLabel">Habilidades</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Habilidad</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Grado De Dominio</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="floatingInput" min="0" max="100">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--                                Modal Habilidades Delete                                   -->
+<div class="modal fade" id="DeleteHabilidadesModal" tabindex="-1" aria-labelledby="DeleteHabilidadesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="DeleteHabilidadesLabel">Habilidades</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Habilidad</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--                                Modal Proyectos Edit                                              -->
+<div class="modal fade" id="EditProyectosModal" tabindex="-1" aria-labelledby="EditProyectosModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditProyectosModalLabel">Proyectos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Imagen</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Fecha De Realización</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Descripción</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Link</label>
+          <div class="col-sm-10">
+          <input type="url" class="form-control" id="floatingInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--                                Modal Proyectos Delete                                   -->
+<div class="modal fade" id="DeleteProyectosModal" tabindex="-1" aria-labelledby="DeleteProyectosModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="DeleteProyectosModalLabel">Proyectos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--                                Modal Boton De Descarga Edit                                              -->
+<div class="modal fade" id="EditBotonDescargaModal" tabindex="-1" aria-labelledby="EditBotonDescargaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditBotonDescargaModalLabel">Descarga Cv</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Link archivo pdf</label>
+          <div class="col-sm-10">
+          <input type="url" class="form-control" id="floatingInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </header>
+      <main>
+      <!--                                Banner                                               -->
+      <section id="imagen-del-banner" class="banner">
+        <div>
+          <ul class="list-group botones-de-edicion banner list-group-horizontal">
+            <!--                          Button edit                                         -->
+          <li class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#BannerModal"></i></li>
+          </ul>
+          <img src="assets/img/pccode.jpg" width="100%" height="750vh" alt="...">
+          <h1 class="texto-banner">Hola! <br> Bienvenido/a a mi portfolio, <br> me presento. Soy:</h1>
+        </div>
+      </section>
+      <!--                              Sistema de grilla                                      -->
+  <section id="información" class="information">
+    <!--Apartado Acerca De Mi-->
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-3">
+          <ul class="list-group botones-de-edicion edicion-perfil list-group-horizontal">
+            <!--                          Button edit                                         -->
+          <li class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#PerfilModal"></i></li>
+          </ul>
+          <img src="assets/img/Nataniel.F- (6).png" class="rounded-circle w-75" alt="..." title="...">
+          <ul class="list-group botones-de-edicion edicion-perfil-nombre list-group-horizontal">
+            <!--                          Button edit                                         -->
+          <li class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#PerfilNombreModal"></i></li>
+          </ul>
+          <h2 class="modal-title fw-semibold">Nataniel Ferreyra</h2>
+          <h4 class="modal-title cinzel-letter">Full Stack Developer Jr</h4>
+        </div>
+        <div class="col pt-md-5 text-perfil">
+          <div class="row">
+          <h2 class="d-inline">Acerca De Mi</h2>
+          <div class="text-justify-content">
+            <ul class="list-group botones-de-edicion edicion-perfil-acercade list-group-horizontal">
+              <!--                          Button edit                                         -->
+            <li class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditAcercaDeModal"></i></li>
+              <!--                          Button Delete                                       -->
+            <li class="list-group-item"><i class="fa-solid fa-x fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#DeleteAcercaDeModal"></i></li>
+            </ul>
+          <h5 class="d-inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem tempora expedita officiis cupiditate, accusamus quasi! Ullam id, inventore eveniet accusantium asperiores, maiores quas magnam quasi odio ut doloremque cumque. Sapiente.</h5>
+        </div>
+        </div> 
+      </div>
+      <!--Apartado Experiencia-->
+      <section id="experiencia" class="experience">
+        <div class="container border mt-sm-5" style="border-radius:10px">
+          <div class="row">
+            <ul class="list-group botones-de-edicion edicion-experiencia-y-otros list-group-horizontal">
+              <!--                          Button edit                                         -->
+            <li class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditExperienciaModal"></i></li>
+              <!--                          Button Delete                                       -->
+            <li class="list-group-item"><i class="fa-solid fa-x fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#DeleteExperienciaModal"></i></li>
+            </ul>
+        <div id="borde" class="col-1 text-perfil">
+          <h2 class="d-inline">Experiencia</h2>
+         </div>
+         <div id="texto-para-ajustar" class="col text-perfil text-start">
+          <h5 class="d-inline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, vero possimus optio quo iusto aspernatur dicta commodi voluptatibus natus sequi nobis! Saepe itaque qui voluptates sit autem odio. Nemo, ipsum.</h5>
+        </div>
+    </div>
+  </div>
+    </section>
+    <!--Apartado Educación-->
+    <section id="educación" class="education">
+      <div class="container border mt-sm-5" style="border-radius:10px">
+        <div class="row">
+          <ul class="list-group botones-de-edicion edicion-experiencia-y-otros list-group-horizontal">
+            <!--                          Button edit                                         -->
+          <li class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditEducaciónModal"></i></li>
+            <!--                          Button Delete                                       -->
+          <li class="list-group-item"><i class="fa-solid fa-x fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#DeleteEducaciónModal"></i></li>
+          </ul>
+      <div id="borde" class="col-1 text-perfil">
+        <h2 class="d-inline">Educación</h2>
+    </div>
+    <div id="texto-para-ajustar" class="col text-perfil text-start">
+      <h5 class="d-inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, natus. Ipsum tempore fuga in alias maxime temporibus harum quasi officiis dolor dolores magnam dignissimos assumenda vel, repellendus aliquid, quia praesentium?</h5>
+    </div>  
+  </div>
+</div>
+  </section>
+  <!--Apartado Habilidades-->
+  <section id="habilidades" class="hard-and-soft-kills">
+    <div class="container border mt-sm-5" style="border-radius:10px">
+      <div class="row">
+        <ul class="list-group botones-de-edicion edicion-experiencia-y-otros list-group-horizontal">
+          <!--                          Button edit                                         -->
+        <li class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditHabilidadesModal"></i></li>
+          <!--                          Button Delete                                       -->
+        <li class="list-group-item"><i class="fa-solid fa-x fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#DeleteHabilidadesModal"></i></li>
+        </ul>
+    <div id="borde" class="col-1 text-perfil">
+      <h2 class="d-inline">Habilidades</h2>
+  </div>
+  <div id="texto-para-ajustar" class="col text-perfil text-start">
+    <div class="progress-circle-container">
+      <div class="progress-circle progress-1"><span>1</span></div>  
+      <div class="progress-circle progress-2"><span>2</span></div>  
+      <div class="progress-circle progress-3"><span>3</span></div>  
+      <div class="progress-circle progress-4"><span>4</span></div>  
+      <div class="progress-circle progress-5"><span>5</span></div>   
+      <div class="progress-circle progress-6"><span>6</span></div> 
+      <div class="progress-circle progress-7"><span>7</span></div>  
+      <div class="progress-circle progress-8"><span>8</span></div>  
+      <div class="progress-circle progress-9"><span>9</span></div>  
+      <div class="progress-circle progress-10"><span>10</span></div>  
+      <div class="progress-circle progress-11"><span>11</span></div>
+      <div class="progress-circle progress-12"><span>12</span></div>
+      <div class="progress-circle progress-13"><span>13</span></div>
+      <div class="progress-circle progress-14"><span>14</span></div>
+      <div class="progress-circle progress-15"><span>15</span></div>
+      <div class="progress-circle progress-16"><span>16</span></div>
+      <div class="progress-circle progress-17"><span>17</span></div>
+      <div class="progress-circle progress-18"><span>18</span></div>
+      <div class="progress-circle progress-19"><span>19</span></div>
+      <div class="progress-circle progress-20"><span>20</span></div>  
+      <div class="progress-circle progress-21"><span>21</span></div>
+      <div class="progress-circle progress-22"><span>22</span></div>
+      <div class="progress-circle progress-23"><span>23</span></div>
+      <div class="progress-circle progress-24"><span>24</span></div>
+      <div class="progress-circle progress-25"><span>25</span></div>
+      <div class="progress-circle progress-26"><span>26</span></div>
+      <div class="progress-circle progress-27"><span>27</span></div>
+      <div class="progress-circle progress-28"><span>28</span></div>
+      <div class="progress-circle progress-29"><span>29</span></div>
+      <div class="progress-circle progress-30"><span>30</span></div>
+      <div class="progress-circle progress-31"><span>31</span></div>
+      <div class="progress-circle progress-32"><span>32</span></div>
+      <div class="progress-circle progress-33"><span>33</span></div>
+      <div class="progress-circle progress-34"><span>34</span></div>
+      <div class="progress-circle progress-35"><span>35</span></div>
+      <div class="progress-circle progress-36"><span>36</span></div>
+      <div class="progress-circle progress-37"><span>37</span></div>
+      <div class="progress-circle progress-38"><span>38</span></div>
+      <div class="progress-circle progress-39"><span>39</span></div>
+      <div class="progress-circle progress-40"><span>40</span></div>
+      <div class="progress-circle progress-41"><span>41</span></div>
+      <div class="progress-circle progress-42"><span>42</span></div>
+      <div class="progress-circle progress-43"><span>43</span></div>
+      <div class="progress-circle progress-44"><span>44</span></div>
+      <div class="progress-circle progress-45"><span>45</span></div>
+      <div class="progress-circle progress-46"><span>46</span></div>
+      <div class="progress-circle progress-47"><span>47</span></div>
+      <div class="progress-circle progress-48"><span>48</span></div>
+      <div class="progress-circle progress-49"><span>49</span></div>  
+      <div class="progress-circle progress-50"><span>50</span></div>  
+      <div class="progress-circle progress-51"><span>51</span></div>
+      <div class="progress-circle progress-52"><span>52</span></div>
+      <div class="progress-circle progress-53"><span>53</span></div>
+      <div class="progress-circle progress-54"><span>54</span></div>
+      <div class="progress-circle progress-55"><span>55</span></div>
+      <div class="progress-circle progress-56"><span>56</span></div>
+      <div class="progress-circle progress-57"><span>57</span></div>
+      <div class="progress-circle progress-58"><span>58</span></div>
+      <div class="progress-circle progress-59"><span>59</span></div>
+      <div class="progress-circle progress-60"><span>60</span></div>
+      <div class="progress-circle progress-61"><span>61</span></div>
+      <div class="progress-circle progress-62"><span>62</span></div>
+      <div class="progress-circle progress-63"><span>63</span></div>
+      <div class="progress-circle progress-64"><span>64</span></div>
+      <div class="progress-circle progress-65"><span>65</span></div>
+      <div class="progress-circle progress-66"><span>66</span></div>
+      <div class="progress-circle progress-67"><span>67</span></div>
+      <div class="progress-circle progress-68"><span>68</span></div>
+      <div class="progress-circle progress-69"><span>69</span></div>
+      <div class="progress-circle progress-70"><span>70</span></div>
+      <div class="progress-circle progress-71"><span>71</span></div>
+      <div class="progress-circle progress-72"><span>72</span></div>
+      <div class="progress-circle progress-73"><span>73</span></div>
+      <div class="progress-circle progress-74"><span>74</span></div>
+      <div class="progress-circle progress-75"><span>75</span></div>
+      <div class="progress-circle progress-76"><span>76</span></div>
+      <div class="progress-circle progress-77"><span>77</span></div>
+      <div class="progress-circle progress-78"><span>78</span></div>
+      <div class="progress-circle progress-79"><span>79</span></div>
+      <div class="progress-circle progress-80"><span>80</span></div>
+      <div class="progress-circle progress-81"><span>81</span></div>
+      <div class="progress-circle progress-82"><span>82</span></div>
+      <div class="progress-circle progress-83"><span>83</span></div>
+      <div class="progress-circle progress-84"><span>84</span></div>
+      <div class="progress-circle progress-85"><span>85</span></div>
+      <div class="progress-circle progress-86"><span>86</span></div>
+      <div class="progress-circle progress-87"><span>87</span></div>
+      <div class="progress-circle progress-88"><span>88</span></div>
+      <div class="progress-circle progress-89"><span>89</span></div>
+      <div class="progress-circle progress-90"><span>90</span></div>
+      <div class="progress-circle progress-91"><span>91</span></div>
+      <div class="progress-circle progress-92"><span>92</span></div>
+      <div class="progress-circle progress-93"><span>93</span></div>
+      <div class="progress-circle progress-94"><span>94</span></div>
+      <div class="progress-circle progress-95"><span>95</span></div>
+      <div class="progress-circle progress-96"><span>96</span></div>
+      <div class="progress-circle progress-97"><span>97</span></div>
+      <div class="progress-circle progress-98"><span>98</span></div>
+      <div class="progress-circle progress-99"><span>99</span></div>  
+      <div class="progress-circle progress-100"><span>100</span></div>  
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!--Apartado Proyectos-->
+<section id="proyectos" class="proyects">
+  <div class="container border mt-sm-5" style="border-radius:10px">
+    <div class="row">
+      <ul class="list-group botones-de-edicion edicion-experiencia-y-otros list-group-horizontal">
+        <!--                          Button edit                                         -->
+      <li class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditProyectosModal"></i></li>
+        <!--                          Button Delete                                       -->
+      <li class="list-group-item"><i class="fa-solid fa-x fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#DeleteProyectosModal"></i></li>
+      </ul>
+  <div id="borde" class="col-1 text-perfil">
+    <h2 class="d-inline">Proyectos</h2>
+</div>
+<div id="texto-para-ajustar" class="col text-perfil text-start">
+  <h5 class="d-inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, natus. Ipsum tempore fuga in alias maxime temporibus harum quasi officiis dolor dolores magnam dignissimos assumenda vel, repellendus aliquid, quia praesentium?</h5>
+  </div>  
+</div>
+</div>
+</section>
+  </div>
+  </div>
+  </section>
+      </main>
+      <footer class="pie-de-pagina container-fluid">
+        <div class="grupo-1">
+        <p>Para descargar mi cv haz click en el siguiente botón</p>
+        <a class="boton-descarga" href="documento.pdf" download="mi-archivo.pdf"><i class="fa-solid fa-download fa-xl"></i></a>
+        <ul class="list-group botones-de-edicion edicion-botondescarga list-group-horizontal">
+          <!--                          Button edit                                         -->
+        <li class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditBotonDescargaModal"></i></li>
+        </ul>
+      </div>
+      <div class="grupo-2">
+        <small>&copy; 2022 <b>Nataniel Ferreyra</b> -Todos Los Derechos Reservados.</small>
+      </div>
+      </footer>
+      <!--                                JavaScript Bundle with Popper                        -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>

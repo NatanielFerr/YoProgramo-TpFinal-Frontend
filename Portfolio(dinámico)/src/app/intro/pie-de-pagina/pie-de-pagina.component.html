@@ -1,0 +1,59 @@
+<footer class="pie-de-pagina container-fluid">
+    <div *ngFor="let cv of cvs" class="grupo-1">
+    <p class="responsive">Para descargar mi cv haz click en el siguiente botón</p>
+    <a class="boton-descarga responsive" [href]="cv.link" [download]="cv.nombre"><i class="fa-solid fa-download fa-xl"></i></a>
+    <ul *ngIf="modoEdicion" class="list-group botones-de-edicion edicion-botondescarga list-group-horizontal">
+      <div *ngFor="let persona of personas">
+      <!--                          Button edit                                         -->
+    <button class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditBotonDescargaModal" (click)="detail(cv.id)"></i></button>
+  </div>
+    </ul>
+  </div>
+  <div *ngFor="let cv of cvs" class="grupo-2">
+    <small>&copy; {{cv.anio_derechos}} <b *ngFor="let persona of personas">{{persona.nombre}} {{persona.apellido}}</b> -Todos Los Derechos Reservados.</small>
+  </div>
+</footer>
+
+<!--                                Modal Boton Descarga Edit                                      -->
+<div class="modal fade" id="EditBotonDescargaModal" tabindex="-1" aria-labelledby="EditBotonDescargaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditBotonDescargaModalLabel">Descarga cv</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">ID</label>
+          <div class="col-sm-10">
+            <input type="" class="form-control outline-none border-0 bg-transparent" readonly id="floatingInput" formControlName="id" name="id" [(ngModel)]="cvv.id">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Link</label>
+          <div class="col-sm-10">
+            <input type="url" class="form-control" id="floatingInput" formControlName="link"  name="link" [(ngModel)]="cvv.link">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput" formControlName="nombre"  name="nombre" [(ngModel)]="cvv.nombre">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Año Derechos</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="floatingInput" formControlName="anio_derechos"  name="anio_derechos" [(ngModel)]="cvv.anio_derechos">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
