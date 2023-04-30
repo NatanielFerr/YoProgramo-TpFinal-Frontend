@@ -20,13 +20,13 @@ export class ApartadoEducacionComponent implements OnInit {
   //Modal educaciones edit//
   form: FormGroup;
   educ = new Educacion("","","","","","","",1);
-  nivel: string;
-  institucion: string;
-  img : string;
-  descripcion: string;
-  link : string;
-  inicio:Date;
-  fin:Date;
+  nivel: '';
+  institucion: '';
+  img : any;
+  descripcion: '';
+  link : '';
+  inicio:'';
+  fin:'';
   personaid: number = 1;
 
 
@@ -121,7 +121,6 @@ export class ApartadoEducacionComponent implements OnInit {
     detail(id:number){
       this.sEducacion.detail(id).subscribe(data =>{
         this.form.setValue(data);
-        console.log(data);
       })
     }
 

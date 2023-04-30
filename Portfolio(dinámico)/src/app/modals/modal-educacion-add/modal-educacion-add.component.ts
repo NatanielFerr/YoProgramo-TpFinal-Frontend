@@ -10,13 +10,13 @@ import { EducacionService } from 'src/app/services/educacion.service';
 })
 export class ModalEducacionAddComponent implements OnInit {
   form: FormGroup;
-  nivel: string;
-  institucion: string;
-  img : string;
-  descripcion: string;
-  link : string;
-  inicio:Date;
-  fin:Date;
+  nivel: '';
+  institucion: '';
+  img : any;
+  descripcion: '';
+  link : '';
+  inicio:'';
+  fin:'';
   educaciones: Educacion[]=[];
   personaid: number = 1 ;
 
