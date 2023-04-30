@@ -1,0 +1,85 @@
+<!--                                Modal Experiencias Add                                      -->
+<div class="modal fade" id="AddExperienciaModal" tabindex="-1" aria-labelledby="AddExperienciaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="AddExperienciaModalLabel">Experiencias</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate>
+        <div class="modal-body form-floating">
+          <div class="mb-3 row">
+            <label hidden class="col-sm-2 col-form-label">Persona Id</label>
+            <div class="col-sm-10">
+              <input type="hidden" class="form-control" id="personaid" formControlName="personaid" [(ngModel)]="personaid">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="nombre" formControlName="nombre" [(ngModel)]="nombre" [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.
+              touched, 'is-valid': !Nombre?.errors && Nombre?.touched}">
+              <div *ngIf="Nombre?.errors && Nombre?.touched">
+                <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                    El nombre es requerido.
+                </p>
+                </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Logo de la empresa</label>
+            <div class="col-sm-10">
+              <input type="url" class="form-control" id="logo" formControlName="logo" [(ngModel)]="logo">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Cargo</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="floatingInput" formControlName="cargo"  name="cargo" [(ngModel)]="cargo" [ngClass]="{'is-invalid': Cargo?.errors && Cargo?.
+              touched, 'is-valid': !Cargo?.errors && Cargo?.touched}">
+              <div *ngIf="Cargo?.errors && Cargo?.touched">
+                <p *ngIf="Cargo?.hasError('required')" class="text-danger">
+                    El cargo es requerido.
+                </p>
+                </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Inicio</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="floatingInput" formControlName="inicio"  name="inicio" [(ngModel)]="inicio" [ngClass]="{'is-invalid': Inicio?.errors && Inicio?.
+              touched, 'is-valid': !Inicio?.errors && Inicio?.touched}">
+              <div *ngIf="Inicio?.errors && Inicio?.touched">
+                <p *ngIf="Inicio?.hasError('required')" class="text-danger">
+                    La fecha de inicio es requerida.
+                </p>
+                </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Fin</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="floatingInput" formControlName="fin"  name="fin" [(ngModel)]="fin">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Descripción</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="floatingInput" formControlName="descripcion_cargo"  name="descripcion_cargo" [(ngModel)]="descripcion_cargo" [ngClass]="{'is-invalid': Descripcion_cargo?.errors && Descripcion_cargo?.
+              touched, 'is-valid': !Descripcion_cargo?.errors && Descripcion_cargo?.touched}">
+              <div *ngIf="Descripcion_cargo?.errors && Descripcion_cargo?.touched">
+                <p *ngIf="Descripcion_cargo?.hasError('required')" class="text-danger">
+                    La descripcion es requerida.
+                </p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
+          <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>

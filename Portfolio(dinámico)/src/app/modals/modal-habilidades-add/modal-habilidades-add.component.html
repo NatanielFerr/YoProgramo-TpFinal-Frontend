@@ -1,0 +1,61 @@
+<!--                                Modal Habilidades Add                                      -->
+<div class="modal fade" id="AddHabilidadesModal" tabindex="-1" aria-labelledby="AddHabilidadesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="AddHabilidadesModalLabel">Habilidades</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate>
+        <div class="modal-body form-floating">
+          <div class="mb-3 row">
+            <label hidden class="col-sm-2 col-form-label">Persona Id</label>
+            <div class="col-sm-10">
+              <input type="hidden" class="form-control" id="personaid" formControlName="personaid" [(ngModel)]="personaid">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="nombre" formControlName="nombre" [(ngModel)]="nombre" [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.
+              touched, 'is-valid': !Nombre?.errors && Nombre?.touched}">
+              <div *ngIf="Nombre?.errors && Nombre?.touched">
+                <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                    El nombre es requerido.
+                </p>
+                </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Logo de la habilidad</label>
+            <div class="col-sm-10">
+              <input type="url" class="form-control" id="logo" formControlName="logo" [(ngModel)]="logo">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Porcentaje</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="porcentaje" formControlName="porcentaje" [(ngModel)]="porcentaje" [ngClass]="{'is-invalid': Porcentaje?.errors && Porcentaje?.
+              touched, 'is-valid': !Porcentaje?.errors && Porcentaje?.touched}">
+              <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
+                <p *ngIf="Porcentaje?.hasError('required')" class="text-danger">
+                    El porcentaje es requerido.
+                </p>
+                <p *ngIf="Porcentaje?.hasError('min')" class="text-danger">
+                  El porcentaje mínimo es 0.
+                </p>
+                <p *ngIf="Porcentaje?.hasError('max')" class="text-danger">
+                El porcentaje máximo es 100.
+                </p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
+          <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>

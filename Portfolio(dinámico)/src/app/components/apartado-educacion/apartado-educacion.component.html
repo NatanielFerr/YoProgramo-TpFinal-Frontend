@@ -1,0 +1,114 @@
+<section id="educación" class="education">
+    <div class="container border mt-sm-5" style="border-radius:10px">
+      <div id="borde" class="col-1 text-perfil">
+      <h2 class="d-inline">Educación</h2>
+      <!--                          Button Add                                          -->
+      <button type="submit" *ngIf="modoEdicion" class="list-group-item add"><i class="fa-solid fa-plus fa-xl" data-bs-toggle="modal" data-bs-target="#AddEducacionModal"></i></button>
+    </div>
+      <div *ngFor="let educacion of educaciones" class="row">
+        <ul *ngIf="modoEdicion" class="list-group botones-de-edicion edicion-experiencia-y-otros list-group-horizontal">
+          <!--                          Button edit                                         -->
+        <button type="button" class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditEducacionModal" (click)="detail(educacion.id)"></i></button>
+          <!--                          Button Delete                                       -->
+        <button type="button" class="list-group-item"><i class="fa-solid fa-x fa-xl" type="button" data-bs-toggle="modal" data-bs-target="" (click)="delete(educacion.id)"></i></button>
+        </ul>
+    <div id="borde" class="col-1 text-perfil">
+      <div id="textonivel" class="col-sm-10"><a id="link" [href]="educacion.link" target="_blank"><img [src]="educacion.img"  width="155px"></a>
+        <div class="mt-2">
+        <h4>{{educacion.nivel}}</h4>
+        <h4 id="fecha">{{educacion.inicio | date:"dd-MM-yyyy"}} {{educacion.fin | date:"dd-MM-yyyy"}}</h4>
+      </div>
+      </div>
+  </div>
+  <div id="texto-para-ajustar" class="col text-perfil text-start">
+    <h5 class="d-inline">{{educacion.descripcion}}</h5>
+  </div>  
+</div>
+</div>
+</section>
+
+<!--                                Modal Educacion Edit                                      -->
+<div class="modal fade" id="EditEducacionModal" tabindex="-1" aria-labelledby="EditEducacionModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditEducacionModalLabel">Educaciones</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">ID</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" readonly id="floatingInput" formControlName="id" name="id" [(ngModel)]="educ.id">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label hidden class="col-sm-2 col-form-label">Persona Id</label>
+          <div class="col-sm-10">
+            <input type="hidden" class="form-control" id="personaid" formControlName="personaid" [(ngModel)]="personaid">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="nivel" formControlName="nivel" [(ngModel)]="nivel" [ngClass]="{'is-invalid': Nivel?.errors && Nivel?.
+            touched, 'is-valid': !Nivel?.errors && Nivel?.touched}">
+            <div *ngIf="Nivel?.errors && Nivel?.touched">
+              <p *ngIf="Nivel?.hasError('required')" class="text-danger">
+                  El nombre es requerido.
+              </p>
+              </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Imagen</label>
+          <div class="col-sm-10">
+            <input type="url" class="form-control" id="img" formControlName="logo" [(ngModel)]="img">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Inicio</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="floatingInput" formControlName="inicio"  name="inicio" [(ngModel)]="inicio" [ngClass]="{'is-invalid': Inicio?.errors && Inicio?.
+            touched, 'is-valid': !Inicio?.errors && Inicio?.touched}">
+            <div *ngIf="Inicio?.errors && Inicio?.touched">
+              <p *ngIf="Inicio?.hasError('required')" class="text-danger">
+                  La fecha de inicio es requerida.
+              </p>
+              </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Fin</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="floatingInput" formControlName="fin"  name="fin" [(ngModel)]="fin">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Descripción</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput" formControlName="descripcion"  name="descripcion" [(ngModel)]="descripcion" [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.
+            touched, 'is-valid': !Descripcion?.errors && Descripcion?.touched}">
+            <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+              <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                  La descripcion es requerida.
+              </p>
+              </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Link</label>
+          <div class="col-sm-10">
+            <input type="url" class="form-control" id="floatingInput" formControlName="link"  name="link" [(ngModel)]="link">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

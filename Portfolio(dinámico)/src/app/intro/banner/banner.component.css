@@ -1,0 +1,128 @@
+/*  texto del banner  */
+.texto-banner{
+    color: #f0f0f0;
+    margin-left: 30rem;
+    position: absolute;
+    display: block;
+    margin-top: -25rem;
+  }
+
+  /*  botones edición banner  */
+  ul.list-group.botones-de-edicion.banner.list-group-horizontal{
+    margin-top: 13rem;
+    padding-left: 102rem;
+  }
+  
+  /*  Posición Botones Edición Dashboard  */
+  ul.list-group.botones-de-edicion.list-group-horizontal {
+  position: absolute;
+}
+
+  /*  botones de edición dashboard  */
+i.fa-solid.fa-pen-to-square.fa-xl{
+  display: block;
+  color: #36ceb2;
+}
+
+i.fa-solid.fa-pen-to-square.fa-xl:hover{
+  transform: scale(120%);
+}
+
+/*  botones de borrar dashboard  */
+i.fa-solid.fa-x.fa-xl{
+  display: block;
+  color: #36ceb2;
+}
+
+/*  botones edición redes  */
+li.list-group-item.edicion-redes{
+margin-top: -1rem;
+}
+
+i.fa-solid.fa-x.fa-xl:hover{
+  transform: scale(120%);
+}
+
+.list-group{
+  --bs-list-group-bg: transparent;
+  --bs-list-group-border-color: transparent;
+}
+
+
+  /* Sección Responsive */
+@media screen and (max-width : 920px){
+  .texto-banner {
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-left: 5rem;
+    margin-top: -14rem;
+  }
+  img{
+    height: 550px;
+  }
+  i.fa-solid.fa-pen-to-square.fa-xl.banner{
+    margin-left: -114rem;
+    margin-top: 8rem;
+   }
+   .fa-xl {
+     font-size: 1.5rem;
+     line-height: .04167em;
+     vertical-align: -0.125em;
+ }
+}
+
+@media screen and (max-width : 760px){
+  
+  i.fa-solid.fa-pen-to-square.fa-xl.banner{
+    margin-left: -117rem;
+    margin-top: 8rem;
+   }
+   .fa-xl {
+     font-size: 1.5rem;
+     line-height: .04167em;
+     vertical-align: -0.125em;
+ }
+}
+
+@media screen and (max-width : 420px){
+  i.fa-solid.fa-pen-to-square.fa-xl.banner{
+    margin-left: -157rem;
+    margin-top: 8rem;
+   }
+   .fa-xl {
+     font-size: 1.5rem;
+     line-height: .04167em;
+     vertical-align: -0.125em;
+ }
+}
+
+@media screen and (max-width : 380px){
+  i.fa-solid.fa-pen-to-square.fa-xl.banner{
+    margin-left: -167rem;
+    margin-top: 7rem;
+   }
+   .fa-xl {
+     font-size: 1.5rem;
+     line-height: .04167em;
+     vertical-align: -0.125em;
+ }
+}
+
+/* Sección Responsive Modal Banner Edit */
+@media screen and (max-width: 810px) {
+  div.modal-content{
+      max-width: 100%;
+  }
+div.modal{
+  flex-wrap: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+div.col-sm-10{
+  margin-left: 0.5rem;
+}
+div.modal-footer{
+  margin-left: 4rem;
+}
+}

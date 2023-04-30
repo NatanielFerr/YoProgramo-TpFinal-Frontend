@@ -1,0 +1,46 @@
+<app-navbar-contacto></app-navbar-contacto>
+<app-modal-login></app-modal-login>
+
+<main>
+  <div id="contactoscroll">
+  <section class="contacto">
+      <div class="content responsive">
+          <h1 class="logo animate__animated animate__rubberBand">Contact <span>Me</span></h1>
+          <div class="contact-wrapper">
+            <div class="contact-form">
+              <h2>Contact Me</h2>
+              <form [formGroup]="Form" (ngSubmit)="Send()" novalidate #f="ngForm" action="">
+                <p>
+                  <label>Nombre Y Apellido</label>
+                  <input type="text" [(ngModel)]="nombre_y_apellido" name="nombre_y_apellido">
+                </p>
+                <p>
+                  <label class="responsive-2">Email</label>
+                  <input type="email" [(ngModel)]="email" name="email">
+                </p>
+                <p>
+                  <label>Telefono</label>
+                  <input type="tel" [(ngModel)]="telefono" name="telefono">
+                </p>
+                <p>
+                  <label>Asunto</label>
+                  <input type="text" [(ngModel)]="asunto" name="asunto">
+                </p>
+                <p class="block">
+                  <label>Mensaje</label>
+                  <textarea [(ngModel)]="mensaje" name="mensaje" rows="3"></textarea>
+                </p>
+                <p class="block">
+                  <button type="submit">
+                    Enviar
+                  </button>
+                </p>
+              </form>
+            </div>
+          </div>
+      </div>
+      <h4>¡¡En desarrollo!!</h4>
+  </section>
+</div>
+</main>
+<app-pie-de-pagina></app-pie-de-pagina>

@@ -1,0 +1,124 @@
+<section id="experiencia" class="experience">
+    <div class="container border mt-sm-5" style="border-radius:10px">
+      <div class="row">
+      <div id="borde" class="col-1 text-perfil">
+      <h2 class="d-inline">Experiencia</h2>
+      <!--                          Button Add                                          -->
+      <button type="submit" *ngIf="modoEdicion"  class="list-group-item add"><i class="fa-solid fa-plus fa-xl" data-bs-toggle="modal" data-bs-target="#AddExperienciaModal"></i></button>
+    </div>
+      <div *ngFor="let experiencia of experiencias" class="row responsive">
+        <ul *ngIf="modoEdicion" class="list-group botones-de-edicion edicion-experiencia-y-otros list-group-horizontal">
+          <!--                          Button edit                                         -->
+        <button type="button" class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditExperienciaModal" (click)="detail(experiencia.id)"></i></button>
+          <!--                          Button Delete                                       -->
+        <button type="button" class="list-group-item"><i class="fa-solid fa-x fa-xl" type="button" data-bs-toggle="modal" data-bs-target="" (click)="delete(experiencia.id)"></i></button>
+        </ul>
+    <div id="borde" class="col-1 text-perfil">
+      <div id="textonombre" class="col-sm-10"><a id="link" [href]="experiencia.link" target="_blank"><img [src]="experiencia.logo" width="155px"></a>
+        <div class="mt-2">
+          <h4>{{experiencia.nombre}}</h4>
+          <h4 id="fecha">{{experiencia.inicio | date:"dd-MM-yyyy"}} {{experiencia.fin | date:"dd-MM-yyyy"}}</h4>
+          <h4 id="fecha">{{experiencia.actual}}</h4>
+          <h4>{{experiencia.cargo}}</h4>
+        </div>
+      </div>
+     </div>
+     <div id="texto-para-ajustar" class="col text-perfil text-start">
+      <h5 class="d-inline">{{experiencia.descripcion_cargo}}</h5>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!--                                Modal Experiencia Edit                                              -->
+<div class="modal fade" id="EditExperienciaModal" tabindex="-1" aria-labelledby="EditExperienciaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditExperienciaModalLabel">Experiencias</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">ID</label>
+          <div class="col-sm-10">
+            <input type="" class="form-control outline-none border-0 bg-transparent" readonly id="floatingInput" formControlName="id" name="id" [(ngModel)]="expe.id">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label hidden class="col-sm-2 col-form-label">Persona Id</label>
+          <div class="col-sm-10">
+            <input type="hidden" class="form-control" id="personaid" formControlName="personaid" [(ngModel)]="expe.personaid">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput" formControlName="nombre"  name="nombre" [(ngModel)]="expe.nombre" [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.
+            touched, 'is-valid': !Nombre?.errors && Nombre?.touched}">
+            <div *ngIf="Nombre?.errors && Nombre?.touched">
+              <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                  El nombre es requerido.
+              </p>
+              </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Logo de la empresa</label>
+          <div class="col-sm-10">
+            <input type="url" class="form-control" id="floatingInput" formControlName="logo"  name="logo" [(ngModel)]="expe.logo">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Cargo</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput" formControlName="cargo"  name="cargo" [(ngModel)]="expe.cargo" [ngClass]="{'is-invalid': Cargo?.errors && Cargo?.
+            touched, 'is-valid': !Cargo?.errors && Cargo?.touched}">
+            <div *ngIf="Cargo?.errors && Cargo?.touched">
+              <p *ngIf="Cargo?.hasError('required')" class="text-danger">
+                  El cargo es requerido.
+              </p>
+              </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Inicio</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="floatingInput" formControlName="inicio"  name="inicio" [(ngModel)]="expe.inicio" [ngClass]="{'is-invalid': Inicio?.errors && Inicio?.
+            touched, 'is-valid': !Inicio?.errors && Inicio?.touched}">
+            <div *ngIf="Inicio?.errors && Inicio?.touched">
+              <p *ngIf="Inicio?.hasError('required')" class="text-danger">
+                  La fecha de inicio es requerida.
+              </p>
+              </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Fin</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="floatingInput" formControlName="fin"  name="fin" [(ngModel)]="expe.fin">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Descripción</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput" formControlName="descripcion_cargo"  name="descripcion_cargo" [(ngModel)]="expe.descripcion_cargo" [ngClass]="{'is-invalid': Descripcion_cargo?.errors && Descripcion_cargo?.
+            touched, 'is-valid': !Descripcion_cargo?.errors && Descripcion_cargo?.touched}">
+            <div *ngIf="Descripcion_cargo?.errors && Descripcion_cargo?.touched">
+              <p *ngIf="Descripcion_cargo?.hasError('required')" class="text-danger">
+                  La descripcion es requerida.
+              </p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,252 @@
+/*  texto acerca de mi  */
+.text-perfil{
+    color: #000000;
+}
+.modal-title.fw-semibold{
+    color: #000000;
+    font-family: 'Prompt', sans-serif;
+}
+
+div#texto-acerca-de-mi{
+  height: auto;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+.cinzel-letter{
+  font-family: 'Cinzel', serif;
+}
+
+/*  edición perfil  */
+ul.list-group.botones-de-edicion.edicion-perfil.list-group-horizontal{
+  padding-left: 14rem;
+  padding-top: 4rem;
+}
+
+/*  edición perfil nombre  */
+ul.list-group.botones-de-edicion.edicion-perfil-nombre.list-group-horizontal{
+  margin-top: 1.5rem;
+  padding-left: 18rem;
+}
+
+/*  edición perfil acerca de  */
+ul.list-group.botones-de-edicion.edicion-perfil-acercade.list-group-horizontal{
+  margin-top: -2rem;
+  padding-left: 53rem;
+}
+
+/*  botones de edición dashboard  */
+i.fa-solid.fa-pen-to-square.fa-xl{
+  display: block;
+  color: #36ceb2;
+}
+
+i.fa-solid.fa-pen-to-square.fa-xl:hover{
+  transform: scale(120%);
+}
+
+/*  botones de borrar dashboard  */
+i.fa-solid.fa-x.fa-xl{
+  display: block;
+  color: #36ceb2;
+}
+
+/*  botones edición redes  */
+li.list-group-item.edicion-redes{
+margin-top: -1rem;
+}
+
+i.fa-solid.fa-x.fa-xl:hover{
+  transform: scale(120%);
+}
+
+.list-group{
+  --bs-list-group-bg: transparent;
+  --bs-list-group-border-color: transparent;
+}
+
+
+/*  Posición Botones Edición Dashboard  */
+ul.list-group.botones-de-edicion.list-group-horizontal {
+  position: absolute;
+}
+
+
+  /* Sección Responsive */
+  @media screen and (max-width: 920px) {
+    div.col-3, div.col-sm-10{
+        flex-wrap: nowrap;
+        text-align: center;
+        width: 11rem;
+    }
+    div.col{
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      position: relative;
+      flex-wrap: nowrap;
+      margin-top: 0.2rem;
+      margin-left: 1.5rem;
+  }
+
+  ul.list-group.botones-de-edicion.edicion-perfil.list-group-horizontal{
+    padding-left: 0.5rem;
+    padding-top: 3rem;
+   }
+
+   ul.list-group.botones-de-edicion.edicion-perfil-acercade.list-group-horizontal{
+    padding-left: 22rem;
+  }
+
+  ul.list-group.botones-de-edicion.edicion-perfil-nombre.list-group-horizontal{
+    margin-left: -9.5rem;
+  }
+
+  .fa-xl {
+    font-size: 1.5rem;
+    line-height: .04167em;
+    vertical-align: -0.125em;
+}
+    
+}
+
+@media screen and (max-width: 760px) {
+  div.col-3, div.col-sm-10{
+      flex-wrap: nowrap;
+      text-align: center;
+      width: 11rem;
+  }
+  div.col{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    flex-wrap: nowrap;
+    margin-top: 0.2rem;
+    margin-left: 1.5rem;
+}
+
+ul.list-group.botones-de-edicion.edicion-perfil.list-group-horizontal{
+  padding-left: 0.5rem;
+  padding-top: 3rem;
+ }
+
+ ul.list-group.botones-de-edicion.edicion-perfil-acercade.list-group-horizontal{
+  padding-left: 17rem;
+}
+
+ul.list-group.botones-de-edicion.edicion-perfil-nombre.list-group-horizontal{
+  margin-left: -9.5rem;
+}
+
+.fa-xl {
+  font-size: 1.5rem;
+  line-height: .04167em;
+  vertical-align: -0.125em;
+}
+
+.row.acercade {
+  margin-top: 3rem;
+}
+  
+}
+
+@media screen and (max-width: 420px) {
+  div.col-3, div.col-sm-10{
+      flex-wrap: nowrap;
+      text-align: center;
+      width: 11rem;
+  }
+  div.col{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    flex-wrap: nowrap;
+    margin-top: 0.2rem;
+    margin-left: 1.5rem;
+}
+
+ul.list-group.botones-de-edicion.edicion-perfil.list-group-horizontal{
+  padding-left: 0.5rem;
+  padding-top: 3rem;
+ }
+
+ ul.list-group.botones-de-edicion.edicion-perfil-acercade.list-group-horizontal{
+  padding-left: 18rem;
+}
+
+ul.list-group.botones-de-edicion.edicion-perfil-nombre.list-group-horizontal{
+  margin-left: -9.5rem;
+}
+
+.fa-xl {
+  font-size: 1.5rem;
+  line-height: .04167em;
+  vertical-align: -0.125em;
+}
+
+.row.acercade {
+  margin-top: 15rem;
+  margin-left: -14rem;
+}
+  
+}
+
+@media screen and (max-width: 380px) {
+  div.col-3, div.col-sm-10{
+      flex-wrap: nowrap;
+      text-align: center;
+      width: 11rem;
+  }
+  div.col{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    flex-wrap: nowrap;
+    margin-top: 0.2rem;
+    margin-left: 1.5rem;
+}
+
+ul.list-group.botones-de-edicion.edicion-perfil.list-group-horizontal{
+  padding-left: 0.5rem;
+  padding-top: 3rem;
+ }
+
+ ul.list-group.botones-de-edicion.edicion-perfil-acercade.list-group-horizontal{
+  padding-left: 16rem;
+}
+
+ul.list-group.botones-de-edicion.edicion-perfil-nombre.list-group-horizontal{
+  margin-left: -9.5rem;
+}
+
+.fa-xl {
+  font-size: 1.5rem;
+  line-height: .04167em;
+  vertical-align: -0.125em;
+}
+
+.row.acercade {
+  margin-top: 15rem;
+  margin-left: -14rem;
+}
+  
+}
+
+/* Sección Responsive Modal Perfil Edit */
+@media screen and (max-width: 810px) {
+  div.modal-content{
+      max-width: 100%;
+  }
+div.modal{
+  flex-wrap: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+div.col-sm-10{
+  margin-left: 0.5rem;
+  width: 100%;
+}
+div.modal-footer{
+  margin-left: 4rem;
+}
+}
+

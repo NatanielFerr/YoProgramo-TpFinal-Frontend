@@ -1,0 +1,63 @@
+<!--                                Modal Redes Edit                                      -->
+<div class="modal fade" id="AddRedesModal" tabindex="-1" aria-labelledby="AddRedesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="AddRedesModalLabel">Redes Sociales</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>      </div>
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label hidden class="col-sm-2 col-form-label">Persona Id</label>
+          <div class="col-sm-10">
+            <input type="hidden" class="form-control" id="personaid" formControlName="personaid" [(ngModel)]="personaid">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Logo De La Red</label>
+          <div class="col-sm-10">
+              <input type="link" class="form-control" id="floatingInput" formControlName="logo"  name="logo" [(ngModel)]="logo" [ngClass]="{'is-invalid': Logo?.errors && Logo?.
+              touched, 'is-valid': !Logo?.errors && Logo?.touched}">
+              <div *ngIf="Logo?.errors && Logo?.touched">
+                <p *ngIf="Logo?.hasError('required')" class="text-danger">
+                    El logo es requerido.
+                </p>
+                <p *ngIf="Logo?.errors?.['pattern']" class="text-danger">
+                  El nombre del logo debe ir en letras minúsculas.
+                </p>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Nombre De La Red</label>
+          <div class="col-sm-10">
+              <input type="text" class="form-control" id="floatingInput" formControlName="denominacion"  name="denominacion" [(ngModel)]="denominacion" [ngClass]="{'is-invalid': Denominacion?.errors && Denominacion?.
+              touched, 'is-valid': !Denominacion?.errors && Denominacion?.touched}">
+              <div *ngIf="Denominacion?.errors && Denominacion?.touched">
+                <p *ngIf="Denominacion?.hasError('required')" class="text-danger">
+                    El nombre es requerido.
+                </p>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Link De La Red</label>
+          <div class="col-sm-10">
+              <input type="link" class="form-control" id="floatingInput" formControlName="link"  name="link" [(ngModel)]="link" [ngClass]="{'is-invalid': Link?.errors && Link?.
+              touched, 'is-valid': !Link?.errors && Link?.touched}">
+              <div *ngIf="Link?.errors && Link?.touched">
+                <p *ngIf="Link?.hasError('required')" class="text-danger">
+                    El link es requerido.
+                </p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
+          <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

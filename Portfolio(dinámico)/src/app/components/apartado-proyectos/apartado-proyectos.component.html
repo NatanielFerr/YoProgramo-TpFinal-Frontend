@@ -1,0 +1,121 @@
+<section id="proyectos" class="proyects">
+    <div class="container border mt-sm-5" style="border-radius:10px">
+      <div id="borde" class="col-1 text-perfil">
+      <h2 class="d-inline">Proyectos</h2>
+      <!--                          Button Add                                          -->
+      <button type="button" *ngIf="modoEdicion" class="list-group-item add"><i class="fa-solid fa-plus fa-xl" data-bs-toggle="modal" data-bs-target="#AddProyectosModal"></i></button>
+    </div>
+      <div *ngFor="let proyecto of proyectos" class="row">
+        <ul *ngIf="modoEdicion" class="list-group botones-de-edicion edicion-experiencia-y-otros list-group-horizontal">
+          <!--                          Button edit                                         -->
+        <button type="button" class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditProyectosModal" (click)="detail(proyecto.id)"></i></button>
+          <!--                          Button Delete                                       -->
+        <button type="button" class="list-group-item"><i class="fa-solid fa-x fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#DeleteProyectosModal" (click)="delete(proyecto.id)"></i></button>
+        </ul>
+    <div id="borde" class="col-1 text-perfil">
+      <div id="textonombre" class="col-sm-10"><a id="link" [href]="proyecto.link" target="_blank"><img [src]="proyecto.logo" width="155px"></a>
+        <div class="mt-2">
+          <h4>{{proyecto.proyecto}}</h4>
+          <h4 id="fecha">{{proyecto.inicio | date:"dd-MM-yyyy"}} {{proyecto.fin | date:"dd-MM-yyyy"}}</h4>
+          <h4>{{proyecto.tecnologia}}</h4>
+        </div>
+      </div>
+  </div>
+  <div id="texto-para-ajustar" class="col text-perfil text-start">
+    <h5 class="d-inline">{{proyecto.descripcion}}</h5>
+    </div>  
+  </div>
+  </div>
+  </section>
+
+  <!--                                Modal Proyectos Edit                                              -->
+<div class="modal fade" id="EditProyectosModal" tabindex="-1" aria-labelledby="EditProyectosModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditProyectosModalLabel">Proyectos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate>
+      <div class="modal-body form-floating">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">ID</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" readonly id="floatingInput" formControlName="id" name="id" [(ngModel)]="proye.id">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Persona ID</label>
+          <div class="col-sm-10">
+            <input type="hidden" class="form-control" id="personaid" formControlName="personaid" [(ngModel)]="proye.personaid">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Nombre del proyecto</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="proyecto" formControlName="proyecto" [(ngModel)]="proye.proyecto" [ngClass]="{'is-invalid': Proyecto?.errors && Proyecto?.
+            touched, 'is-valid': !Proyecto?.errors && Proyecto?.touched}">
+            <div *ngIf="Proyecto?.errors && Proyecto?.touched">
+            <p *ngIf="Proyecto?.hasError('required')" class="text-danger">
+                El Nombre Del Proyecto es requerido.
+            </p>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Imagen</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput" formControlName="logo" [(ngModel)]="proye.logo">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Inicio</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="floatingInput" formControlName="inicio"  name="inicio" [(ngModel)]="proye.inicio" [ngClass]="{'is-invalid': Inicio?.errors && Inicio?.
+            touched, 'is-valid': !Inicio?.errors && Inicio?.touched}">
+            <div *ngIf="Inicio?.errors && Inicio?.touched">
+              <p *ngIf="Inicio?.hasError('required')" class="text-danger">
+                  La fecha de inicio es requerida.
+              </p>
+              </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Fin</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="floatingInput" formControlName="fin"  name="fin" [(ngModel)]="proye.fin">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Link</label>
+          <div class="col-sm-10">
+            <input type="url" class="form-control" id="floatingInput" formControlName="link" [(ngModel)]="proye.link">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Tecnologia</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="floatingInput" formControlName="tecnologia" [(ngModel)]="proye.tecnologia">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Descripcion</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="descripcion" formControlName="descripcion" [(ngModel)]="proye.descripcion" [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.
+            touched, 'is-valid': !Descripcion?.errors && Descripcion?.touched}">
+            <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+            <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                La Descripcion es requerida.
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

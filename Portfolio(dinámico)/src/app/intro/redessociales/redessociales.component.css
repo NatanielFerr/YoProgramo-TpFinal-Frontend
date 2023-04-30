@@ -1,0 +1,108 @@
+/*  logos redes sociales  */
+i.fa-brands.fa-linkedin.fa-2xl:hover{
+    color: #2578d1;
+}
+i.fa-brands.fa-github.fa-2xl:hover{
+    color: #9c9ca3;
+}
+i.fa-brands.fa-instagram.fa-2xl:hover{
+    color: #800080;
+}
+i.fa-brands.fa-twitter.fa-2xl:hover{
+    color: #08d8eb;
+}
+.list-group{
+    --bs-list-group-bg: transparent;
+    --bs-list-group-border-color: transparent;
+}
+.list-group-item,
+a{
+    color: #ffffff;
+}
+
+/*  botones agregar dashboard     */
+i.fa-solid.fa-plus.fa-xl{
+    display: block;
+    color: #36ceb2;
+  }
+  
+  i.fa-solid.fa-plus.fa-xl:hover{
+    transform: scale(120%);
+  }
+  
+  /*  botones de edición dashboard  */
+  i.fa-solid.fa-pen-to-square.fa-xl{
+    display: block;
+    color: #36ceb2;
+  }
+  
+  i.fa-solid.fa-pen-to-square.fa-xl:hover{
+    transform: scale(120%);
+  }
+  
+  /*  botones de borrar dashboard  */
+  i.fa-solid.fa-x.fa-xl{
+    display: block;
+    color: #36ceb2;
+  }
+  
+  /*  botones edición redes  */
+  li.list-group-item.edicion-redes{
+  margin-top: -1rem;
+  }
+  
+  i.fa-solid.fa-x.fa-xl:hover{
+    transform: scale(120%);
+  }
+  
+  .list-group{
+    --bs-list-group-bg: transparent;
+    --bs-list-group-border-color: transparent;
+  }
+
+  /*  Posición Botones Edición Dashboard  */
+ul.list-group.botones-de-edicion.list-group-horizontal {
+    position: absolute;
+  }
+
+
+  
+
+/* Sección Responsive */
+@media screen and (max-width : 900px){
+    ul{
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+  }
+  
+  @media screen and (max-width : 420px){
+    ul.list-group.list-group-horizontal.redes{
+      margin-top: 6rem;
+    }
+  }
+
+  @media screen and (max-width : 380px){
+    ul.list-group.list-group-horizontal.redes{
+      margin-top: 6rem;
+    }
+  }
+
+  /* Sección Responsive Modal Redes Edit */
+ @media screen and (max-width: 810px) {
+  div.modal-content{
+      max-width: 100%;
+  }
+div.modal{
+  flex-wrap: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+div.col-sm-10{
+  margin-left: 0.5rem;
+}
+div.modal-footer{
+  margin-left: 4rem;
+}
+}

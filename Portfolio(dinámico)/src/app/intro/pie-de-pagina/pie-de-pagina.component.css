@@ -1,0 +1,127 @@
+/* Pie De Página */
+.pie-de-pagina{
+    background: #8d12b9;
+    background: -moz-linear-gradient(90deg, #8d12b9 0%, #429cc1 50%, #a029d6 100%);
+    background: -webkit-linear-gradient(90deg, #8d12b9 0%, #429cc1 50%, #a029d6 100%);
+    background: linear-gradient(90deg, #8d12b9 0%, #429cc1 50%, #a029d6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8d12b9",endColorstr="#a029d6",GradientType=1);
+  }
+  
+  .pie-de-pagina .grupo-1{
+    width: 100%;
+    max-width: 75rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1.5rem 0rem;
+    color: #ffffff;
+  }
+  
+  .pie-de-pagina .grupo-2{
+    padding: 93,75% 62,5%;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .pie-de-pagina .grupo-2 small{
+    font-size: 93,75%;
+  }
+  
+  .pie-de-pagina .boton-descarga{
+    margin-left: 2rem;
+    color: #ffffff;
+  }
+
+
+  /*  edición boton de descarga */
+  ul.list-group.botones-de-edicion.edicion-botondescarga.list-group-horizontal{
+    padding-left: 29rem;
+    margin-top: -0.5rem;
+  }
+
+    /*  botones de edición dashboard  */
+  i.fa-solid.fa-pen-to-square.fa-xl{
+    display: block;
+    color: #36ceb2;
+  }
+
+  i.fa-solid.fa-pen-to-square.fa-xl:hover{
+    transform: scale(120%);
+  }
+
+  /*  botones de borrar dashboard  */
+  i.fa-solid.fa-x.fa-xl{
+    display: block;
+    color: #36ceb2;
+  }
+
+  /*  botones edición redes  */
+  button.list-group-item.edicion-redes{
+  margin-top: -1rem;
+  }
+
+  i.fa-solid.fa-x.fa-xl:hover{
+    transform: scale(120%);
+  }
+
+  .list-group{
+    --bs-list-group-bg: transparent;
+    --bs-list-group-border-color: transparent;
+  }
+
+  /*  Posición Botones Edición Dashboard  */
+  ul.list-group.botones-de-edicion.list-group-horizontal {
+  position: absolute;
+  }
+
+
+    /* Sección Responsive */
+    @media screen and (max-width: 920px) {
+    p.responsive, a.responsive{
+      font-size: 80%;
+      position: relative;
+      text-align:start;
+      flex-wrap: wrap;
+      justify-content:space-between;
+      white-space: nowrap;
+    }
+
+  }
+  @media screen and (max-width: 500px) {
+    ul.edicion-botondescarga{
+     padding-top: 2.5rem;
+     margin-left: -9rem;
+    }
+    .fa-xl {
+      font-size: 1.5rem;
+      line-height: .04167em;
+      vertical-align: -0.125em;
+      margin-left: -5rem;
+  }
+  }
+  @media screen and (max-width: 500px) {
+    a.boton-descarga.responsive,i.fa-solid.fa-download.fa-xl{
+      margin-left: -11rem;
+      padding-top: 1.4rem;
+    }
+  }
+
+ /* Sección Responsive Modal Experiencia Edit */
+@media screen and (max-width: 810px) {
+  div.modal-content{
+      max-width: 100%;
+  }
+div.modal{
+  flex-wrap: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+div.col-sm-10{
+  margin-left: 0.5rem;
+  width: 100%;
+}
+div.modal-footer{
+  margin-left: 4rem;
+}
+}

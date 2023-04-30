@@ -1,0 +1,26 @@
+.error{
+    color:red
+  }
+  
+  .border-danger{
+    border-color: red;
+  }
+
+   /* Sección Responsive */
+ @media screen and (max-width: 810px) {
+  *{
+      max-width: 100%;
+  }
+div.modal{
+  flex-wrap: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+div.col-sm-10{
+  margin-left: 0.5rem;
+}
+div.modal-footer{
+  margin-left: 4rem;
+}
+}
