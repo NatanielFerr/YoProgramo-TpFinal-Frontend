@@ -7,7 +7,7 @@
       </div>  
   <div id="texto-para-ajustar" class="col text-perfil text-start responsive">
     <div id="moverprogresos borde" class="progress-circle-container">
-      <div *ngFor="let habilidad of habilidades" class="progress-circle mb-5 progress-{{habilidad.porcentaje}}"><span> <img [src]="habilidad.logo" width="78px"> <div id="porcentaje">{{habilidad.nombre}} {{habilidad.porcentaje}} %</div></span>
+      <div *ngFor="let habilidad of habilidades" class="progress-circle mb-5 progress-{{habilidad.porcentaje}}"><span> <img [src]="habilidad.logo" width="50px"> <div id="porcentaje">{{habilidad.nombre}} {{habilidad.porcentaje}} %</div></span>
       <ul *ngIf="modoEdicion" class="list-group botones-de-edicion edicion-experiencia-y-otros list-group-horizontal">
         <!--                          Button edit                                         -->
       <button type="button" class="list-group-item"><i class="fa-solid fa-pen-to-square fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#EditHabilidadesModal" (click)="detail(habilidad.id)"></i></button>

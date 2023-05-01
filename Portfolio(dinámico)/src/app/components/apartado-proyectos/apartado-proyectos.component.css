@@ -181,8 +181,8 @@ div.col.text-perfil{
   position: relative;
   width: 20rem;
   flex-wrap: nowrap;
-  padding-top: 12rem;
-  margin-left: -8rem;
+  padding-top: 18rem;
+  margin-left: -7rem;
 }
 button.list-group-item.add{
 margin-left: -58rem;
@@ -219,8 +219,8 @@ div.col.text-perfil{
   position: relative;
   width: 20rem;
   flex-wrap: nowrap;
-  padding-top: 12rem;
-  margin-left: -8rem;
+  padding-top: 18rem;
+  margin-left: -7rem;
 }
 button.list-group-item.add{
 margin-left: -62rem;
@@ -261,4 +261,3 @@ div.modal-footer{
 margin-left: 4rem;
 }
 }
-
