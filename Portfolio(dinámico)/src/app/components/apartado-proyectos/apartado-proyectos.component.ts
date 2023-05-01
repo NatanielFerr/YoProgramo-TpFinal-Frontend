@@ -105,7 +105,7 @@ export class ApartadoProyectosComponent implements OnInit {
 
   onUpdate():void{
     this.sProye.update(this.proye.id, this.proye).subscribe(data =>{
-      alert("Habilidad modificada")
+      alert("Proyecto modificado")
       window.location.reload();
     }, err =>{
       alert("falló al modificar, intente nuevamente");
